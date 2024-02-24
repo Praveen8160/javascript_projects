@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="add">
+            <h2>press any key</h2>
+        </div>
+    </div>
+</body>
+<script>
+    const add=document.querySelector('.add')
+    window.addEventListener('keydown',(e)=>{
+        add.innerHTML=`
+    <table>
+        <tr>
+            <th>key</th>
+            <th>keycode</th>
+            <th>code</th>
+        </tr>
+        <tr>
+            <td>${e.key ===' '?'space':e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+    </table>
+    `
+    })
+</script>
+</html>

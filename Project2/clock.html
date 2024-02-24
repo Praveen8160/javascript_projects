@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        height: 150px;
+        width: 380px;
+        font-size: 40px;
+        cursor: pointer;
+        color: aliceblue;
+        border-radius: 25px;
+    }
+</style>
+<body>
+    <div id="main">
+        <center><h1>local Time</h1></center>    
+        <button id="btn" class="255, 0, 0" style="background-color: rgb(255, 0, 0);"></button>
+    </div>
+</body>
+<script>
+    let show=document.querySelector('#btn')
+    setInterval(()=>{
+        const time1=new Date()
+        // console.log(time1.toLocaleTimeString())
+        show.innerHTML=time1.toLocaleTimeString()
+        },1000)
+</script>
+</html>
