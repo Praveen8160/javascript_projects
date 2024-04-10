@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        display:  flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .list{
+        width: 40%;
+        /* height: 90%; */
+        background-color: rgb(216, 170, 170);
+        gap: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .btn{
+        display: flex;
+        flex-direction: column;
+    }
+    button{
+        margin-top: 20px;
+        /* margin-bottom: 20px; */
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="list1 list">
+            <ul class="ulist1">
+                <li>mango</li>
+                <li>apple</li>
+                <li>orange</li>
+            </ul>
+        </div>
+        <div class="btn">
+            <button class="left"> left </button>
+            <button class="Right"> Right </button>
+        </div>
+        <div class="list2 list">
+            <ul class="ulist2">
+                <li>banana</li>
+                <li>carry</li>
+                <li>kiwi</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    const list1=document.querySelector('.ulist1')
+    const list2=document.querySelector('.ulist2')
+    let a=[];
+    list1.addEventListener("click",function(e){
+        a.push(e.target)
+        e.target.style.color="red"
+    })
+    list2.addEventListener("click",function(e){
+        a.push(e.target)
+        e.target.style.color="red"
+    })
+    document.querySelector('.left').addEventListener('click',function(){
+        a.forEach(function(node){
+            node.style.color="black"
+        })
+        a.forEach(function(node){
+            let copy=node.cloneNode(true)
+            list1.appendChild(copy)
+        })
+
+        a=[]
+    })
+    document.querySelector('.Right').addEventListener('click',function(){
+        a.forEach(function(node){
+            node.style.color="black"
+        })
+        a.forEach(function(node){
+            let copy=node.cloneNode(true)
+            list2.appendChild(copy)
+        })
+        a=[]
+    })
+
+</script>
+</html>
